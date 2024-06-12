@@ -1,0 +1,98 @@
+---
+
+---
+<script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('header nav ul').classList.toggle('show');
+    });
+</script>
+
+<header style="z-index: 1000;">
+    <div>
+        <img src="/logo_light.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Inicio">Inicio</a></li>
+            <li><a href="Sobre nosotros">Sobre nosotros</a></li>
+            <li><a href="Nuestro Trabajo">Nuestro Trabajo</a></li>
+            <li><a href="Contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="menu-toggle">
+        <i class="fa-solid fa-bars-staggered" aria-label="Toggle menu"></i>
+    </div>
+</header>
+
+<style>
+    header{
+        width: 100%;
+        position: sticky;
+        top: 0;
+        padding: .5rem;
+        background-color: azure;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    header div img{
+        width: 10rem;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style-type: none;
+    }
+
+    header nav ul li {
+        margin: 0 0.5rem;
+    }
+
+    header nav ul li a{
+        text-decoration: none;
+        color: black;
+    }
+
+    header .menu-toggle{
+        display: none;
+    }
+
+    /* HOVER */
+    header nav ul li a:hover{
+        color: darkcyan;
+    }
+
+    /**MEDIAS */
+    @media  (max-width: 668px) {
+        header nav ul {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            background-color: azure;
+            position: absolute;
+            top: 5rem;
+            left: 0;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav ul.show {
+            display: flex;
+
+        }
+
+        header .menu-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+</style>

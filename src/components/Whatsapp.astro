@@ -1,0 +1,215 @@
+---
+
+---
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let btnClosePopup = document.querySelector('.closePopup');
+        let btnOpenPopup = document.querySelector('.whatsapp-button');
+        let popup = document.querySelector('.popup-whatsapp');
+        let sendBtn = document.getElementById('send-btn');
+
+        btnClosePopup.addEventListener("click",  () => {
+            popup.classList.toggle('is-active-whatsapp-popup')
+        })
+
+        btnOpenPopup.addEventListener("click",  () => {
+            popup.classList.toggle('is-active-whatsapp-popup')
+            //popup.style.animation = "fadeIn .6s 0.0s both";
+        })
+
+        sendBtn.addEventListener("click", () => {
+            let msg = (document.getElementById('whats-in') as HTMLInputElement)?.value;
+            let relmsg = msg.replace(/ /g,"%20");
+
+            window.open('https://wa.me/542216265204?text='+relmsg, '_blank');
+        });
+
+        setTimeout(() => {
+            popup.classList.toggle('is-active-whatsapp-popup');
+        }, 3000);
+});
+</script>
+
+<div class="nav-bottom">
+    <div class="popup-whatsapp fadeIn">
+        <div class="content-whatsapp -top">
+            <button class="closePopup">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+            <p>
+                <img src="/man-icon.jpg" alt="Imagen usuario">
+                Hola, ¿En que te podemos ayudar?
+            </p>
+        </div>
+        <div class="content-whatsapp -bottom">
+            <input class="whats-input" id="whats-in" type="text" placeholder="Enviar mensaje...">
+            <button class="send-msPopup" type="button" id="send-btn">
+                <i class="fa-solid fa-paper-plane" title="Enviar"></i>
+            </button>
+        </div>
+    </div>
+    <button type="button" class="whatsapp-button">
+        <div class="float">
+            <i class="fa-brands fa-whatsapp my-float" aria-hidden="true"></i>
+        </div>
+    </button>
+    <div></div>
+</div>
+
+<style>
+    .nav-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: auto;
+        height: auto;
+        position: fixed;
+        z-index: 8;
+        bottom: 0px;
+        right: 0px;
+        padding: 5px;
+        margin: 0px;
+    }
+
+    .popup-whatsapp {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        bottom: 85px;
+        right: 6px;
+        transition: .5s;
+        border-radius: 10px;
+        box-shadow: 2px 1px 6px 0px rgba(68, 68, 68, 0.705);
+    }
+
+    .popup-whatsapp > div {
+        margin: 5px;
+    }
+
+    .popup-whatsapp > .content-whatsapp.-top{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .closePopup{
+        color: azure;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+        height: 28px;
+        margin: 0 0 15px 0;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        background-color: #ec5822;
+        box-shadow: 1px 1px 2px 0px rgba(68, 68, 68, 0.705);
+    }
+
+    .closePopup:hover{
+        background-color: #b9daad;
+        transition: .3s;
+    }
+
+    .popup-whatsapp > .content-whatsapp.-top p{
+        color: #585858;
+        font-weight: 400;
+        font-size: .7rem;
+        border-radius: 50%;
+    }
+
+    .popup-whatsapp > .content-whatsapp.-top p img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .popup-whatsapp > .content-whatsapp.-bottom {
+        display: flex;
+        flex-direction: row;
+    }
+
+    input.whats-input[type=text] {
+        width: 250px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 0px solid #ffffff;
+        border-radius: 20px;
+        font-size: 1em;
+        background-color: #ffffff;
+        padding: 0px 0px 0px 10px;
+        transition: .3s;
+    }
+
+    .send-msPopup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        margin: 0px 0px 0px 5px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 1px 1px 2px 0px rgba(68, 68, 68, 0.705);
+    }
+
+    .send-msPopup:hover {
+        background-color: #4cc370;
+        transition: .3s;
+    }
+
+    .whatsapp-button {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 60px;
+        height: 60px;
+        z-index: 8;
+        transition: .3s;
+        margin: 10px;
+        padding: 7px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 1px 1px 6px 0px rgba(68, 68, 68, 0.705);
+    }
+
+    .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 15px;
+        right: 16px;
+        background-color: #4cc370;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+
+    .float:hover {
+        color: #fff;
+        background-color: #3d9e5a;
+    }
+
+    .my-float {
+        margin-top: 16px;
+    }
+
+    .is-active-whatsapp-popup{
+        display: flex;
+        animation: slideInRight .6s 0.0s both;
+        background-color: #f0f9f0;
+    }
+
+
+</style>
