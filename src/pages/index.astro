@@ -208,6 +208,8 @@ import Layout from "../layouts/Layout.astro";
 	.producto .producto-item div img{
 		width: 15rem;
 		height: 15rem;
+		border-radius: 0px 20px 20px 20px;
+    	box-shadow: 1px 1px 5px #999;
 	}
 
 	.producto .producto-item .producto-herrero {
@@ -218,17 +220,23 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.producto .producto-item div span{
-		color: #333;
+		color: #fff;
+		position: relative;
+    	top: -85px;
+    	background-color: rgba(134, 134, 132, 50%);
+    	border-radius: 10px;
 	}
 
 	/**Productos Complementarios */
 	.otrosProductos {
 		margin-top: 50px;
+		padding: 50px 0 50px 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 3rem;
+		background-color: #cbd7d7;
 	}
 
 	.otrosProductos div h1{
@@ -246,13 +254,18 @@ import Layout from "../layouts/Layout.astro";
 		height: 10rem;
 		width: 10rem;
 		color: #333;
-		background-color: #cbd7d7;
+		background-color: azure;
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		font-size: 1.5rem;
-		
+		box-shadow: 2px 2px 3px #999;
+		cursor: pointer;
+	}
+
+	.otrosProductos div ul li:hover{
+		box-shadow: none;
 	}
 
 	/**MEDIAS */

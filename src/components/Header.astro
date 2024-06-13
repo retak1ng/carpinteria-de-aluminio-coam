@@ -13,10 +13,10 @@
     </div>
     <nav>
         <ul>
-            <li><a href="Inicio">Inicio</a></li>
-            <li><a href="Sobre nosotros">Sobre nosotros</a></li>
-            <li><a href="Nuestro Trabajo">Nuestro Trabajo</a></li>
-            <li><a href="Contacto">Contacto</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/aboutUs">Sobre nosotros</a></li>
+            <li><a href="/ourWork">Nuestro Trabajo</a></li>
+            <li><a href="/contact">Contacto</a></li>
         </ul>
     </nav>
     <div class="menu-toggle">
@@ -57,8 +57,7 @@
     }
 
     header nav ul li a{
-        text-decoration: none;
-        color: black;
+        color: var(--accent);
     }
 
     header .menu-toggle{
@@ -66,8 +65,13 @@
     }
 
     /* HOVER */
+    header nav ul li:hover{
+        margin-top: .1rem;
+        transition: transition: cubic-bezier(0.4, 0, 1, 1) .1s;
+    }
+
     header nav ul li a:hover{
-        color: darkcyan;
+        color: rgb(0,161,213);
     }
 
     /**MEDIAS */

@@ -1,6 +1,6 @@
 ---
-const platform = "github";
-const username = "retak1ng";
+const telefono = "2216265204";
+const mail = "coamaluminio@gmail.com";
 ---
 
 <footer>
@@ -8,33 +8,40 @@ const username = "retak1ng";
     <aside>
       <h4>Contacto</h4>
       <div>
-        <p>Horario de atencion Lunes a Viernes 8 a 18hs Sabado 8 a 13hs</p>
-        <p>Numero de celular</p>
+        <p>Horario de atencion Lunes a Viernes 8 a 18hs - Sabado 8 a 13hs</p>
+        <p>{telefono}</p>
         <p>
-          <a href="">
-            WhatsApp +549{}
+          <a href="https://wa.me/542216265204">
+            WhatsApp +549{telefono}
           </a>
         </p>
         <p>
-          Avenida 520 entre 155 y 156 - La Plata (1900)</br>
-          <a href="">coam.aluminio@gmail.com</a>
+          Avenida 520 entre 152 y 153 - La Plata (1900)</br>
+          <a href="">{mail}</a>
         </p>
       </div>
     </aside>
     <aside>
       <h4>Informacion</h4>
       <ul>
-        <li>Inicio</li>
-        <li>Sobre Nosotros</li>
-        <li>Nuestro Trabajo</li>
-        <li>Contacto</li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/aboutUs">Sobre nosotros</a></li>
+        <li><a href="/ourWork">Nuestro Trabajo</a></li>
+        <li><a href="/contact">Contacto</a></li>
       </ul>
     </aside>
     <aside>
       <h4>COAM en la redes</h4>
       <ul>
-        <li>Facebook</li>
-        <li>Instragram</li>
+        
+        <li>
+          <i class="fa-brands fa-facebook"></i>
+          <a href="https://www.facebook.com/profile.php?id=61556542996772">Facebook</a>
+        </li>
+        <li>
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/coam.aluminio">Instagram</a>
+        </li>
       </ul>
     </aside>
   </div>
@@ -49,7 +56,7 @@ const username = "retak1ng";
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   footer div aside {
