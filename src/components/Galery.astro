@@ -10,19 +10,62 @@ import 'photoswipe/style.css';
         pswpModule: () => import('photoswipe')
     });
     lightbox.init();
+
+    document.addEventListener('DOMContentLoaded', () => {
+            const galleryLinks = document.querySelectorAll<HTMLAnchorElement>('.pswp-gallery a');
+
+            galleryLinks.forEach(link => {
+                const href = link.href;
+                const img = new Image();
+                img.src = href;
+
+                img.onload = function(this: HTMLImageElement) {
+                    link.setAttribute('data-pswp-width', this.width.toString());
+                    link.setAttribute('data-pswp-height', this.height.toString());
+                };
+            });
+        });
 </script>
 
 <div class="pswp-gallery" id="gallery">
     {
-        Array.from({ lenght: 9 }).map((_,i) => (
+        Array.from({ length: 7 }).map((_,i) => (
             <a 
-                href={'/gallery/img-${i+1}.jpg'} 
+                href={`/gallery/img-${i+1}.jpg`}
+                data-pswp-width=""
+                data-pswp-height=""
                 target="_blank">
                 <img 
-                    src={'/gallery/img-${i+1}.webp'} 
-                    alt=""
+                    loading="lazy"
+                    src={`/gallery/img-${i+1}.jpg`} 
+                    alt="Aberturas de aluminio y vidrios"
                 />
             </a>
         ))
     }
 </div>
+
+
+<style>
+    .pswp-gallery{
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .pswp-gallery a {
+        display: block;
+        width: calc(33.333% - 10px); /* Tres imágenes por fila con espacio entre ellas */
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .pswp-gallery a img {
+        width: 100%;
+        height: 200px; /* Altura fija para las imágenes */
+        object-fit: cover; /* Corta y escala las imágenes para llenar el contenedor */
+        display: block;
+    }
+</style>
