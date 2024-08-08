@@ -4,16 +4,85 @@ import Header from "../components/Header.astro";
 import Whatsapp from "../components/Whatsapp.astro";
 import Layout from "../layouts/Layout.astro";
 
-const pageTitle = "Sobre nosotros - COAM";
+const pageTitle = "Contacto - COAM";
 ---
 
 <Layout title={pageTitle}>
 	<!--Whatsapp -->
-	<Whatsapp/>
+	<Whatsapp />
 	<!--HEADER -->
-	<Header/>
+	<Header />
 	<main>
+		<!--FORMULARIO DE CONTACTO -->
+		<section class="contact">
+		</section>
 	</main>
 	<!--FOOTER -->
-	<Footer/>
+	<Footer />
 </Layout>
+
+<style>
+	.contact {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background-color: #071952;
+	}
+
+	.contact p {
+		margin-bottom: 1rem;
+	}
+
+	.contact form {
+		width: 600px;
+		text-align: center;
+	}
+
+	.contact form button {
+		padding: 12px 32px;
+		background-color: #37b7c3;
+		border: none;
+		outline: none;
+		border-radius: 6px;
+		box-shadow: 0 0 10px #37b7c3;
+		font-size: 16px;
+		color: #333;
+		letter-spacing: 1px;
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.contact form .input-box {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.contact form .input-box .field .error-txt {
+		font-size: 14.5px;
+		color: #d93025;
+		text-align: left;
+		margin: -5px 0 10px;
+	}
+
+	.contact form .input-box .field .item {
+		width: 100%;
+		padding: 1.8rem;
+		background: transparent;
+		border: 0.2rem solid #37b7c3;
+		outline: none;
+		font-size: 1.6rem;
+		color: #ededed;
+		margin: 1.2rem 0;
+	}
+
+	.contact form .input-box .field .item::placeholder {
+		color: rgba(255, 255, 255, 0.3);
+	}
+
+	.contact form .input-box .textarea-field .item {
+		resize: none;
+	}
+</style>

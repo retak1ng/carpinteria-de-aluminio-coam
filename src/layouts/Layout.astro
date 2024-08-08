@@ -10,13 +10,22 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Carpintería de Aluminio - COAM - La Plata" />
+		<meta
+			name="description"
+			content="Carpintería de Aluminio - COAM - La Plata"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/icon.png" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -37,7 +46,7 @@ const { title } = Astro.props;
 		);
 	}
 
-	*{
+	* {
 		padding: 0;
 		margin: 0;
 		font-family: "Cabin", sans-serif;
@@ -48,6 +57,17 @@ const { title } = Astro.props;
 	}
 
 	html {
-		background: azure;
+		/*background: azure;*/
+		scroll-behavior: smooth;
+	}
+
+	/* Cambiar el color del fondo del scrollbar */
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	/* Cambiar el color del thumb cuando el usuario lo esté interactuando */
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
 	}
 </style>
