@@ -1,29 +1,53 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Swiper from "../components/Swiper.astro";
 import Whatsapp from "../components/Whatsapp.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
+<script>
+	let cardItems = document.querySelectorAll(".card-item");
+
+	(document.querySelector('#card-down-modena') as HTMLElement).onclick = () =>{
+		cardItems[0].classList.toggle('active');
+		cardItems[1].classList.remove('active');
+		cardItems[2].classList.remove('active');
+	}
+
+	(document.querySelector('#card-down-a30') as HTMLElement).onclick = () =>{
+		cardItems[1].classList.toggle('active');
+		cardItems[0].classList.remove('active');
+		cardItems[2].classList.remove('active');
+	}
+
+	(document.querySelector('#card-down-herrero') as HTMLElement).onclick = () =>{
+		cardItems[2].classList.toggle('active');
+		cardItems[0].classList.remove('active');
+		cardItems[1].classList.remove('active');
+	}
+
+</script>
+
 <Layout title="Carpinteria de Aluminio - COAM">
 	<!--Whatsapp -->
-	<Whatsapp/>
+	<Whatsapp />
 	<!--HEADER -->
-	<Header/>
+	<Header />
 	<main>
 		<!--PORTADA -->
 		<section class="portada">
-			<h1>Carpinteria de </br>
-				<span class="text-gradient">Aluminio</span>
-			</h1>
-			<p>COAM, expertos en la fabricación de aberturas de aluminio en La Plata. 
-				Ofrecemos productos de alta calidad y soluciones innovadoras para mejorar 
-				sus espacios con elegancia y durabilidad. ¡Descubra cómo podemos transformar 
-				su proyecto con nuestras aberturas de primera clase!</p>
+			<h1>Carpinteria de<br>Aluminio</h1>
+			<p>
+				COAM, somos una empresa joven expertos en la fabricación de aberturas de aluminio. Ofrecemos productos de alta calidad y soluciones
+				innovadoras para mejorar sus espacios con elegancia y
+				durabilidad. ¡Descubra cómo podemos transformar su proyecto con
+				nuestras aberturas de primera clase!
+			</p>
 		</section>
 		<!--SERVICIO -->
 		<section class="servicio">
-			<div><h1 class="text-gradient">Servicios</h1></div>
+			<div><h1>Servicios</h1></div>
 			<div class="servicio-items-container">
 				<div class="servicio-item">
 					<i class="fa-solid fa-layer-group"></i>
@@ -31,8 +55,8 @@ import Layout from "../layouts/Layout.astro";
 						<h3>Almacenamiento de Materiales</h3>
 						<span>
 							<b>Asegura los precios actuales</b>
-							para tu próxima obra. 
-							Compra con anticipación y nosotros cuidaremos tus productos.
+							para tu próxima obra. Compra con anticipación y nosotros
+							cuidaremos tus productos.
 						</span>
 					</div>
 				</div>
@@ -50,9 +74,13 @@ import Layout from "../layouts/Layout.astro";
 					<i class="fa-solid fa-user-clock"></i>
 					<div>
 						<h3>Asesoramiento Personalizado</h3>
-						<span>Optimiza tiempos y costos con nuestro asesoramiento 
+						<span
+							>Optimiza tiempos y costos con nuestro asesoramiento
 							especializado.
-							<b>Solicita tu presupuesto online y recíbelo el mismo día</b>
+							<b
+								>Solicita tu presupuesto online y recíbelo el
+								mismo día</b
+							>
 							.
 						</span>
 					</div>
@@ -62,22 +90,104 @@ import Layout from "../layouts/Layout.astro";
 					<div>
 						<h3>Medios de pagos</h3>
 						<span>
-							<b>Elige entre nuestras diversas opciones de pago y sigue construyendo</b>
-							sin preocupaciones. Aceptamos efectivo, transferencias bancarias, mercado pago y dólares americanos.
+							<b
+								>Elige entre nuestras diversas opciones de pago
+								y sigue construyendo</b
+							>
+							sin preocupaciones. Aceptamos efectivo, transferencias
+							bancarias, mercado pago y dólares americanos.
 						</span>
 					</div>
 				</div>
 			</div>
 		</section>
+		<!-- MINI GALERIA -->
+		<section class="min-galeria">
+			<div><a href="/ourWork"><h1>Nuestro Trabajo</h1></a></div>
+			<Swiper />
+			<div><a href="/ourWork"><p>ver mas...</p></a></div>
+		</section>
 		<!--LINEA DE PRODUCTOS -->
 		<section class="producto">
-			<div><h1 class="text-gradient">Productos</h1></div>
+			<div><h1>Productos</h1></div>
 			<div class="producto-item">
-				<div><img src="/images1.png" alt="Modena"></div>
-				<div><img src="/images2.png" alt="A30"></div>
-				<div class="producto-herrero">
-					<img src="/imagen3.jpg" alt="Herrero">
-					<span>Herrero</span>
+				<div>
+					<img src="/images1.png" alt="Modena" />
+					<span id="card-down-modena"><i class="fa-solid fa-caret-down"></i></span>
+				</div>
+				<div>
+					<img src="/images2.png" alt="A30" />
+					<span id="card-down-a30"><i class="fa-solid fa-caret-down"></i></span>
+				</div>
+				<div>
+					<img src="/imagen3.jpg" alt="Herrero" />
+					<span id="card-down-herrero"><i class="fa-solid fa-caret-down"></i></span>
+				</div>
+			</div>
+			<!--Desplegable -->
+			<div class="card-item">
+				<div class="tipo-alum">
+					<div class="alum-info">
+						<h2>MODENA - ACTUAL</h2>
+						<p>
+							<strong>Sistema de carpintería de mediana prestación. Su diseño permite combinar perfiles con bordes redondeados o rectos, lo que otorga una mayor flexibilidad en su estética.</strong>
+							<br>
+							<br>
+							Es el sistema más tradicional utilizado.
+							<br>
+							Excelentes valores de durabilidad, acabado y dureza superficial.
+							<br>
+							Colocación en seco, mediante la utilizacion de premarcos.
+							<br>
+							Admite cristales de seguridad y DVH.
+						</p>
+					</div>
+					<div class="alum-img">
+						<img src="/modena-img.webp" alt="imagen de modena">
+					</div>
+				</div>
+				<div class="catalogo">
+					<a href="">Catálogo</a>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="tipo-alum">
+					<div class="alum-info">
+						<h2>A30 NEW</h2>
+						<p>
+							Es un Sistema de Carpintería de gran prestigio en el mercado, utilizado en las obras más emblemáticas debido a su diseño y excelente performance.
+							<br>
+							<br>
+							Se puede utilizar vidrio simple o Doble Vidriado Hermético (DVH).
+							<br>
+							Simplicidad, diseño, funcionalidad y calidad.
+							<br>
+							Confort, seguridad y eficiencia.
+							<br>
+							Amplia gamma de complementos y accesorios.
+						</p>
+					</div>
+					<div ><img src="/a30-img.webp" alt=""></div>
+				</div>
+				<div class="catalogo">
+					<a href="https://www.aluar.com.ar/assets/admin/archivos/sistemas/pdf/3/CATALOGO_TECNICO_A30_NEW_V08221.pdf">Catálogo</a>
+				</div>
+			</div>
+			<div class="card-item">
+				<div class="tipo-alum">
+					<div class="alum-info">
+						<h2>CLÁSICO - HERRERO</h2>
+						<p>
+							El sistema de carpintería Clásica, combina diferentes perfiles y permite realizar aberturas económicas y tradicionales con muy buena resistencia mecánica.
+							<br>
+							<br>
+							Se utiliza generalmente en viviendas unifamiliares, escuelas y comercios.
+						</p>
+					</div>
+					<div class="alum-img"><img src="/herrero-img.webp" alt=""></div>
+				</div>
+				<div class="catalogo">
+					<a href="https://drive.google.com/file/d/0BxPi1Jf6mFLfeGdvV05EQ1g1NlU/view?resourcekey=0-duXdwJFLG_hhr4hKRw-yoQ">Catálogo</a>
 				</div>
 			</div>
 		</section>
@@ -94,45 +204,46 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 		</section>
 	</main>
-	<Footer/>
+	<Footer />
 </Layout>
 
 <style>
 	/**PORTADA */
 	main {
-		color: white;
+		color: #fff;
 		font-size: 2rem;
 		line-height: 1.6;
 	}
 
-	main .portada{
+	main .portada {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		background-color: rgb(100,100,100);
+		background-color: rgb(100, 100, 100);
 		background-image: url(/portada_inicio.jpg);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
-    	background-position: center;
+		background-position: center;
 		background-blend-mode: soft-light;
 	}
 
 	main .portada h1 {
+		color: #fff;
 		font-size: 4rem;
 		font-weight: 700;
-		line-height: 1;
+		line-height: 1.2;
 		text-align: center;
-		margin: 3rem 0 3rem 0;
+		margin-top: 50px;
 	}
 
 	main .portada p {
-		width: 30%;
-		margin: 1rem 3rem 3rem 3rem;
-		padding: 0 2rem 0 2rem;
+		width: 50%;
+		margin: 3rem 3rem 50px 3rem;
+		padding: 2rem;
 		border-radius: 10px;
 		font-size: 1rem;
-		background-color: rgba(0, 0, 0, 50%)
+		background-color: rgba(0, 0, 0, 50%);
 	}
 
 	.text-gradient {
@@ -145,7 +256,7 @@ import Layout from "../layouts/Layout.astro";
 
 	/**SERVICIO */
 	.servicio {
-		background-color: #cbd7d7;
+		background-color: #fff;
 		padding: 50px;
 		display: flex;
 		flex-direction: column;
@@ -153,38 +264,63 @@ import Layout from "../layouts/Layout.astro";
 		align-items: center;
 	}
 
+	.servicio div h1 {
+		color: rgb(var(--azul-oscuro));
+	}
+
 	.servicio .servicio-items-container {
-    	display: flex;
-    	flex-wrap: wrap;
+		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 	}
 
-	.servicio .servicio-item{
+	.servicio .servicio-item {
 		width: 400px;
 		box-sizing: border-box;
-		background-color: azure;
+		background-color: rgb(var(--celeste));
 		border-radius: 10px;
 		padding: 2rem;
 		margin: 1rem;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		box-shadow: 1px 1px 5px rgb(var(--azul-oscuro));
 	}
 
 	.servicio .servicio-item div {
 		font-size: 1rem;
-		color: black;
+		color: rgb(var(--azul-oscuro));
 	}
 
 	.servicio .servicio-item div h3 {
-		color: #333;
-    	padding-bottom: .5rem;
+		color: #000;
+		padding-bottom: 0.5rem;
 	}
 
-	.servicio .servicio-item i{
-		color: #00a1d5;
+	.servicio .servicio-item i {
+		color: rgb(var(--azul-oscuro));
 		font-size: 3rem;
 		margin-right: 1.5rem;
+	}
+
+	/**MIN-GALERIA */
+	.min-galeria div h1 {
+		color: rgb(var(--azul-oscuro));
+	}
+
+	.min-galeria {
+		margin-top: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.min-galeria div p {
+		color: rgb(var(--naranja));
+		margin-top: 10px;
+		font-size: 1.1rem;
+		font-weight: 700;
 	}
 
 	/**Productos */
@@ -196,7 +332,11 @@ import Layout from "../layouts/Layout.astro";
 		align-items: center;
 	}
 
-	.producto .producto-item{
+	.producto div h1{
+		color: rgb(var(--azul-oscuro));
+	}
+
+	.producto .producto-item {
 		margin-top: 50px;
 		display: flex;
 		flex-wrap: wrap;
@@ -205,28 +345,74 @@ import Layout from "../layouts/Layout.astro";
 		gap: 1rem;
 	}
 
-	
-
-	.producto .producto-item div img{
+	.producto .producto-item div img {
 		width: 15rem;
 		height: 15rem;
 		border-radius: 0px 20px 20px 20px;
-    	box-shadow: 1px 1px 5px #999;
+		box-shadow: 1px 1px 5px #999;
 	}
 
-	.producto .producto-item .producto-herrero {
+	.producto .producto-item div {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
-	.producto .producto-item div span{
-		color: #fff;
+	.producto .producto-item div span {
+		color: rgb(var(--azul-oscuro));
 		position: relative;
-    	top: -85px;
-    	background-color: rgba(134, 134, 132, 50%);
-    	border-radius: 10px;
+		top: 0px;
+		cursor: pointer;
+	}
+
+	/**CARD ITEM */
+	.producto .card-item{
+		display: none;
+		border-top: 4px solid #000;
+	}
+
+	.producto .card-item.active {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.producto .card-item .tipo-alum {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.producto .card-item .catalogo {
+		margin-left: 100px;
+	}
+
+	.producto .card-item .tipo-alum .alum-info {
+		width: 500px;
+		padding: 1rem;
+	}
+
+	.producto .card-item div div img {
+		margin-top: 10px;
+		width: 270px;
+	}
+
+	.producto .card-item div div h2 {
+		color: #000;
+		font-size: 2rem;
+	}
+
+	.producto .card-item div div p{
+		color: #333;
+		font-size: 1.3rem;
+	}
+
+	.producto .card-item div a{
+		color: rgb(var(--azul-oscuro));
+		font-size: 1.5rem;
+		padding: 5px 25px;
+		background-color: rgb(var(--naranja));
+		border-radius: 40px;
 	}
 
 	/**Productos Complementarios */
@@ -241,7 +427,7 @@ import Layout from "../layouts/Layout.astro";
 		background-color: #cbd7d7;
 	}
 
-	.otrosProductos div h1{
+	.otrosProductos div h1 {
 		text-align: center;
 	}
 
@@ -266,13 +452,13 @@ import Layout from "../layouts/Layout.astro";
 		cursor: pointer;
 	}
 
-	.otrosProductos div ul li:hover{
+	.otrosProductos div ul li:hover {
 		box-shadow: none;
 	}
 
 	/**MEDIAS */
-	@media (max-width: 668px){
-		.servicio .servicio-item{
+	@media (max-width: 668px) {
+		.servicio .servicio-item {
 			width: 300px;
 		}
 
@@ -284,10 +470,10 @@ import Layout from "../layouts/Layout.astro";
 			font-size: 2rem;
 		}
 
-		main .portada p{
+		main .portada p {
 			width: 270px;
-			margin: 0rem 0rem 3rem 0rem;
-			padding: 1rem 1rem 1rem 1rem;
+			margin: 1rem 0rem 50px 0rem;
+			padding: 1rem;
 		}
 	}
 </style>

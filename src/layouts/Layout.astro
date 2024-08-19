@@ -26,6 +26,10 @@ const { title } = Astro.props;
 			href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -33,8 +37,14 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
+		--celeste: 142, 202, 230;
+		--celeste-fuerte: 33, 158, 188;
+		--azul-oscuro: 2, 48, 71;
+		--amarillo-oscuro: 255, 183, 3;
+		--naranja: 251, 133, 0;
 		--accent: 29, 12, 6;
 		--accent-light: 0, 161, 213;
 		--accent-dark: 49, 10, 101;
