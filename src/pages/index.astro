@@ -190,10 +190,69 @@ import Layout from "../layouts/Layout.astro";
 					<a href="https://drive.google.com/file/d/0BxPi1Jf6mFLfeGdvV05EQ1g1NlU/view?resourcekey=0-duXdwJFLG_hhr4hKRw-yoQ">Catálogo</a>
 				</div>
 			</div>
+			<!--Colores -->
+			<div class="colores-alum">
+				<div class="content-title"><div class="title"><h3>Colores de Aberturas</h3></div></div>
+				<div class="content-colors">
+					<div class="content-img-colors">
+						<div><img src="/aluminio-pintado.jpg" alt=""></div>
+						<p>Aluminio Pintado</p>
+					</div>
+					<div class="content-img-colors">
+						<div><img src="/anodizado-colores.jpg" alt=""></div>
+						<p>Anodizado</p>
+					</div>
+					<div class="content-img-colors">
+						<div><img src="/muestrario-simil-madera.jpg" alt=""></div>
+						<p>Símil Madera</p>
+					</div>
+				</div>
+			</div>
+			<!--Cristales -->
+			<div class="colores-alum">
+				<div class="content-title"><div class="title"><h3>Cristales</h3></div></div>
+				<div class="content-colors">
+					<div class="content-img-colors">
+						<div><img src="/cristal-float.jpg" alt=""></div>
+						<p>FLOAT</p>
+						<ol>
+							<li>Cristal plano transparente</li>
+							<li>Libre de distosión</li>
+							<li>Caras planas y paralelas</li>
+							<li>Superficie brillante, pulida a fuego</li>
+							<li>Espesor constante</li>
+							<li>Transparencia perfecta</li>
+							<li>Vision clara sin distorsión óptica</li>
+						</ol>
+					</div>
+					<div class="content-img-colors">
+						<div><img src="/laminado.jpg" alt=""></div>
+						<p>LAMINADO</p>
+						<ol>
+							<li>Gran resistencia</li>
+							<li>Rotura segura</li>
+							<li>Solución ideal para aberturas seguras</li>
+							<li>Mantiene su integridad y visibilidad<br>ante impactos</li>
+							<li>Aumenta el nivel de aislación acústica</li>
+						</ol>
+					</div>
+					<div class="content-img-colors">
+						<div><img src="/cristal-dvh.jpg" alt=""></div>
+						<p>DVH</p>
+						<ol>
+							<li>Aislamiento térmico superior</li>
+							<li>Mejora el aislamiento acústico</li>
+							<li>Puede variar combinaciones de cristales<br>para cubrir distintas necesidades</li>
+							<li>Potente instrumento de ahorro energético</li>
+							<li>Elimina la condensación de humedad</li>
+						</ol>
+					</div>
+				</div>
+			</div>
 		</section>
 		<!--Productos Complementarios -->
 		<section class="otrosProductos">
-			<div><h1 class="text-gradient">Productos Complementarios</h1></div>
+			<div><h1>Productos Complementarios</h1></div>
 			<div>
 				<ul>
 					<li>Mosquiteros</li>
@@ -414,7 +473,48 @@ import Layout from "../layouts/Layout.astro";
 		background-color: rgb(var(--naranja));
 		border-radius: 40px;
 	}
+	/**COLORES ALUMINIO */
+	.producto .colores-alum {
+		margin-top: 50px;
+	}
 
+	.producto .colores-alum .content-title .title h3 {
+		color: rgb(var(--azul-oscuro));
+		font-size: 2rem;
+		border-bottom:4px solid #000;
+		margin-bottom: 15px;
+		padding-left: 10px;
+	}
+
+	.producto .colores-alum .content-colors {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.producto .colores-alum .content-colors .content-img-colors {
+		display: flex;
+		flex-direction: column;
+		margin: 0px 5px;
+	}
+
+	.producto .colores-alum div div p{
+		color: #333;
+		font-size: medium;
+		padding-bottom: 10px;
+	}
+
+	.producto .colores-alum div div img {
+		width: 300px;
+		height: auto;
+	}
+	/**CRISTALES */
+	.producto .colores-alum div div ol li{
+		color: #999;
+		list-style-type: circle;
+		font-size: small;
+	}
 	/**Productos Complementarios */
 	.otrosProductos {
 		margin-top: 50px;
@@ -424,11 +524,12 @@ import Layout from "../layouts/Layout.astro";
 		justify-content: center;
 		align-items: center;
 		gap: 3rem;
-		background-color: #cbd7d7;
+		background-color: rgb(var(--azul-oscuro));
 	}
 
 	.otrosProductos div h1 {
 		text-align: center;
+		color: #fff;
 	}
 
 	.otrosProductos div ul {
