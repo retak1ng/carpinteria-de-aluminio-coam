@@ -27,6 +27,36 @@ import Layout from "../layouts/Layout.astro";
 		cardItems[1].classList.remove('active');
 	}
 
+
+	let otherCardsItems = document.querySelectorAll('.otrosProductos-card');
+
+	(document.querySelector('#card-down-mosquitero') as HTMLElement).onclick = () =>{
+		otherCardsItems[0].classList.toggle('active');
+		otherCardsItems[1].classList.remove('active');
+		otherCardsItems[2].classList.remove('active');
+		otherCardsItems[3].classList.remove('active');
+	}
+
+	(document.querySelector('#card-down-mampara') as HTMLElement).onclick = () =>{
+		otherCardsItems[1].classList.toggle('active');
+		otherCardsItems[0].classList.remove('active');
+		otherCardsItems[2].classList.remove('active');
+		otherCardsItems[3].classList.remove('active');
+	}
+
+	(document.querySelector('#card-down-baranda') as HTMLElement).onclick = () =>{
+		otherCardsItems[2].classList.toggle('active');
+		otherCardsItems[0].classList.remove('active');
+		otherCardsItems[1].classList.remove('active');
+		otherCardsItems[3].classList.remove('active');
+	}
+
+	(document.querySelector('#card-down-espejo') as HTMLElement).onclick = () =>{
+		otherCardsItems[3].classList.toggle('active');
+		otherCardsItems[0].classList.remove('active');
+		otherCardsItems[1].classList.remove('active');
+		otherCardsItems[2].classList.remove('active');
+	}
 </script>
 
 <Layout title="Carpinteria de Aluminio - COAM">
@@ -125,21 +155,20 @@ import Layout from "../layouts/Layout.astro";
 				</div>
 			</div>
 			<!--Desplegable -->
-			<div class="card-item">
+			<div class="card-item active">
 				<div class="tipo-alum">
 					<div class="alum-info">
 						<h2>MODENA - ACTUAL</h2>
 						<p>
 							<strong>Sistema de carpintería de mediana prestación. Su diseño permite combinar perfiles con bordes redondeados o rectos, lo que otorga una mayor flexibilidad en su estética.</strong>
 							<br>
+							- Es el sistema más tradicional utilizado.
 							<br>
-							Es el sistema más tradicional utilizado.
+							- Excelentes valores de durabilidad, acabado y dureza superficial.
 							<br>
-							Excelentes valores de durabilidad, acabado y dureza superficial.
+							- Colocación en seco, mediante la utilizacion de premarcos.
 							<br>
-							Colocación en seco, mediante la utilizacion de premarcos.
-							<br>
-							Admite cristales de seguridad y DVH.
+							- Admite cristales de seguridad y DVH.
 						</p>
 					</div>
 					<div class="alum-img">
@@ -147,7 +176,7 @@ import Layout from "../layouts/Layout.astro";
 					</div>
 				</div>
 				<div class="catalogo">
-					<a href="">Catálogo</a>
+					<a target="_blank" href="https://drive.google.com/file/d/0BxPi1Jf6mFLfVTBmSExtdjNzMjg/view?resourcekey=0-EjyDTkXQl3_ACeHe43Kg_g">Catálogo</a>
 				</div>
 			</div>
 			<div class="card-item">
@@ -170,7 +199,7 @@ import Layout from "../layouts/Layout.astro";
 					<div ><img src="/a30-img.webp" alt=""></div>
 				</div>
 				<div class="catalogo">
-					<a href="https://www.aluar.com.ar/assets/admin/archivos/sistemas/pdf/3/CATALOGO_TECNICO_A30_NEW_V08221.pdf">Catálogo</a>
+					<a target="_blank" href="https://www.aluar.com.ar/assets/admin/archivos/sistemas/pdf/3/CATALOGO_TECNICO_A30_NEW_V08221.pdf">Catálogo</a>
 				</div>
 			</div>
 			<div class="card-item">
@@ -187,7 +216,7 @@ import Layout from "../layouts/Layout.astro";
 					<div class="alum-img"><img src="/herrero-img.webp" alt=""></div>
 				</div>
 				<div class="catalogo">
-					<a href="https://drive.google.com/file/d/0BxPi1Jf6mFLfeGdvV05EQ1g1NlU/view?resourcekey=0-duXdwJFLG_hhr4hKRw-yoQ">Catálogo</a>
+					<a target="_blank" href="https://drive.google.com/file/d/0BxPi1Jf6mFLfeGdvV05EQ1g1NlU/view?resourcekey=0-duXdwJFLG_hhr4hKRw-yoQ">Catálogo</a>
 				</div>
 			</div>
 			<!--Colores -->
@@ -255,11 +284,33 @@ import Layout from "../layouts/Layout.astro";
 			<div><h1>Productos Complementarios</h1></div>
 			<div>
 				<ul>
-					<li>Mosquiteros</li>
-					<li>Mamparas</li>
-					<li>Barandas</li>
-					<li>Espejos</li>
+					<li id="card-down-mosquitero">Mosquitero<span>A</span></li>
+					<li id="card-down-mampara">Mampara<span>A</span></li>
+					<li id="card-down-baranda">Baranda<span>A</span></li>
+					<li id="card-down-espejo">Espejo<span>A</span></li>
 				</ul>
+			</div>
+			<div class="otrosProductos-info">
+				<div class="otrosProductos-card active">
+					<div><img src="/mosquitero.webp" alt=""></div>
+					<h3>MOSQUITERO</h3>
+					<p>Fabricamos mosquiteros diseñados a medida para evitar la entrada de mosquitos y otros insectos, adaptándolos a las características específicas de cada abertura. Ofrecemos opciones de mosquiteros corredizos, rebatibles o fijos, según tus necesidades. En caso de que la abertura no cuente con guías para mosquiteros, instalaremos las necesarias tanto en la parte superior como inferior. Las guías pueden ser simples o dobles, asegurando así una instalación adecuada y duradera.</p>
+				</div>
+				<div class="otrosProductos-card">
+					<div><img src="/mampara.jpg" alt=""></div>
+					<h3>MAMPARAS</h3>
+					<p>Fabricamos e instalamos mamparas de baño a medida, diseñadas para brindar seguridad y estilo a tu espacio. Nuestras mamparas se adaptan a cualquier configuración de baño y están disponibles en diferentes opciones: paneles corredizos con guías de aluminio, hojas fijas y rebatibles. Tambien, ofrecemos una línea de mamparas de policarbonato. Cada mampara es personalizada para garantizar un ajuste perfecto y un acabado profesional que complementa tu baño.</p>
+				</div>
+				<div class="otrosProductos-card">
+					<div><img src="/baranda.jpg" alt=""></div>
+					<h3>BARANDAS</h3>
+					<p>Nuestras barandas de aluminio están diseñadas para proporcionar seguridad y soporte en balcones, terrazas, escaleras y pasillos. Fabricadas principalmente en aluminio, estas estructuras son altamente duraderas, resistentes a la corrosión y requieren poco mantenimiento. Además de su funcionalidad, ofrecen una apariencia moderna y elegante, y están disponibles en una variedad de estilos y diseños para satisfacer diversas necesidades y preferencias estéticas.</p>
+				</div>
+				<div class="otrosProductos-card">
+					<div><img src="/espejo.jpg" alt=""></div>
+					<h3>ESPEJOS</h3>
+					<p>Ofrecemos espejos a medida para cualquier espacio, diseñados para aportar estilo y funcionalidad a tu hogar o negocio. Nuestros espejos están fabricados con materiales de alta calidad y son personalizados para adaptarse a tus necesidades específicas. Disponibles en una variedad de tamaños, formas y estilos, nuestros espejos son perfectos para baños, vestidores, salones y cualquier otro espacio donde se desee añadir un toque de elegancia y amplitud, garantizando un acabado impecable y duradero.</p>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -269,12 +320,10 @@ import Layout from "../layouts/Layout.astro";
 <style>
 	/**PORTADA */
 	main {
-		color: #fff;
-		font-size: 2rem;
 		line-height: 1.6;
 	}
 
-	main .portada {
+	.portada {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -287,8 +336,8 @@ import Layout from "../layouts/Layout.astro";
 		background-blend-mode: soft-light;
 	}
 
-	main .portada h1 {
-		color: #fff;
+	.portada h1 {
+		color: #ffffff;
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1.2;
@@ -296,7 +345,8 @@ import Layout from "../layouts/Layout.astro";
 		margin-top: 50px;
 	}
 
-	main .portada p {
+	.portada p {
+		color: var(--title-b);
 		width: 50%;
 		margin: 3rem 3rem 50px 3rem;
 		padding: 2rem;
@@ -305,17 +355,8 @@ import Layout from "../layouts/Layout.astro";
 		background-color: rgba(0, 0, 0, 50%);
 	}
 
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-
 	/**SERVICIO */
 	.servicio {
-		background-color: #fff;
 		padding: 50px;
 		display: flex;
 		flex-direction: column;
@@ -324,9 +365,10 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.servicio div h1 {
-		color: rgb(var(--azul-oscuro));
+		color: var(--title-w);
+		font-size: 2rem;
 		line-height: 50px;
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid var(--iconography-w);
 	}
 
 	.servicio .servicio-items-container {
@@ -336,40 +378,41 @@ import Layout from "../layouts/Layout.astro";
 		margin-top: 50px;
 	}
 
-	.servicio .servicio-item {
+	.servicio  .servicio-items-container .servicio-item {
 		width: 400px;
 		box-sizing: border-box;
-		background-color: rgb(var(--celeste));
+		background-color: var(--background-b);
 		border-radius: 10px;
 		padding: 2rem;
 		margin: 1rem;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		box-shadow: 1px 1px 5px rgb(var(--azul-oscuro));
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%)
 	}
 
-	.servicio .servicio-item div {
-		font-size: 1rem;
-		color: rgb(var(--azul-oscuro));
-	}
-
-	.servicio .servicio-item div h3 {
-		color: #000;
-		padding-bottom: 0.5rem;
-	}
-
-	.servicio .servicio-item i {
-		color: rgb(var(--azul-oscuro));
+	.servicio .servicio-items-container .servicio-item i {
+		color: rgb(var(--celeste));
 		font-size: 3rem;
 		margin-right: 1.5rem;
 	}
 
+	.servicio .servicio-items-container .servicio-item div h3 {
+		font-size: 1rem;
+		color: var(--title-b);
+	}
+
+	.servicio .servicio-items-container .servicio-item div span{
+		color: var(--body-text-b);
+		font-size: 0.9rem;
+	}
+
 	/**MIN-GALERIA */
 	.min-galeria div h1 {
-		color: rgb(var(--azul-oscuro));
+		font-size: 2rem;
+		color: var(--title-w);
 		line-height: 50px;
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid var(--iconography-w);
 	}
 
 	.min-galeria {
@@ -381,7 +424,7 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.min-galeria div p {
-		color: rgb(var(--naranja));
+		color: var(--body-text-w);
 		margin-top: 10px;
 		font-size: 1.1rem;
 		font-weight: 700;
@@ -394,12 +437,12 @@ import Layout from "../layouts/Layout.astro";
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		/**border-top: 3px solid #000;*/
 	}
 
 	.producto div h1{
-		color: rgb(var(--azul-oscuro));
-		border-bottom: 1px solid #000;
+		color: var(--title-w);
+		font-size: 2rem;
+		border-bottom: 1px solid var(--iconography-w);
 		line-height: 50px;
 	}
 
@@ -416,7 +459,7 @@ import Layout from "../layouts/Layout.astro";
 		width: 15rem;
 		height: 15rem;
 		border-radius: 0px 20px 20px 20px;
-		box-shadow: 1px 1px 5px #999;
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%);
 	}
 
 	.producto .producto-item div {
@@ -426,10 +469,11 @@ import Layout from "../layouts/Layout.astro";
 		align-items: center;
 	}
 
-	.producto .producto-item div span {
-		color: rgb(var(--azul-oscuro));
+	.producto .producto-item div span{
+		color: var(--title-w);
 		position: relative;
 		top: 0px;
+		font-size: 30px;
 		cursor: pointer;
 	}
 
@@ -442,16 +486,13 @@ import Layout from "../layouts/Layout.astro";
 	.producto .card-item.active {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 	}
 
 	.producto .card-item .tipo-alum {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-	}
-
-	.producto .card-item .catalogo {
-		margin-left: 100px;
 	}
 
 	.producto .card-item .tipo-alum .alum-info {
@@ -465,21 +506,22 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.producto .card-item div div h2 {
-		color: #000;
-		font-size: 2rem;
+		color: var(--obsidian);
 	}
 
 	.producto .card-item div div p{
-		color: #333;
+		color: var(--body-text-w);
 		font-size: 1.3rem;
 	}
 
 	.producto .card-item div a{
-		color: rgb(var(--azul-oscuro));
+		color: var(--obsidian);
 		font-size: 1.5rem;
 		padding: 5px 25px;
-		background-color: rgb(var(--naranja));
+		background-color: var(--background-w);
 		border-radius: 40px;
+		border: 1px solid var(--obsidian);
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%);
 	}
 	/**COLORES ALUMINIO */
 	.producto .colores-alum {
@@ -487,9 +529,9 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.producto .colores-alum .content-title .title h3 {
-		color: rgb(var(--azul-oscuro));
-		font-size: 2rem;
-		border-bottom:4px solid #000;
+		color: var(--obsidian);
+		font-size: 1.9rem;
+		border-bottom:3px solid var(--obsidian);
 		margin-bottom: 15px;
 		padding-left: 10px;
 	}
@@ -532,14 +574,15 @@ import Layout from "../layouts/Layout.astro";
 		justify-content: center;
 		align-items: center;
 		gap: 3rem;
-		background-color: rgb(var(--azul-oscuro));
+		background-color: var(--background-b);
 	}
 
 	.otrosProductos div h1 {
+		font-size: 2rem;
 		text-align: center;
-		color: #fff;
+		color: var(--title-b);
 		line-height: 50px;
-		border-bottom: 1px solid #fff;
+		border-bottom: 1px solid var(--iconography-b);
 	}
 
 	.otrosProductos div ul {
@@ -552,24 +595,67 @@ import Layout from "../layouts/Layout.astro";
 	.otrosProductos div ul li {
 		height: 10rem;
 		width: 10rem;
-		color: #333;
-		background-color: azure;
+		color: var(--obsidian);
+		background-color: rgb(var(--celeste));
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		flex-direction: column;
 		font-size: 1.5rem;
-		box-shadow: 2px 2px 3px #999;
+		line-height: 0px;
 		cursor: pointer;
+		box-shadow: 4px 0 4px 0 rgba(255, 255, 255, 25%);
 	}
 
 	.otrosProductos div ul li:hover {
 		box-shadow: none;
+		background-color: rgb(var(--celeste-fuerte));
+	}
+
+	.otrosProductos div ul li span {
+		position: relative;
+		color: var(--title-b);
+		filter: blur(3px);
+		top: 100px;
+	}
+
+	.otrosProductos .otrosProductos-info .otrosProductos-card {
+		display: none;
+		background-color: var(--title-b);
+		width: 500px;
+		margin: 3rem;
+		padding: 3rem;
+		border-radius: 30px;
+	}
+
+	.otrosProductos .otrosProductos-info .otrosProductos-card.active {
+		display: block;
+	}
+
+	.otrosProductos .otrosProductos-info .otrosProductos-card div {
+		display: flex;
+		justify-content: center;
+	}
+
+	.otrosProductos .otrosProductos-info .otrosProductos-card div img {
+		width: 300px;
+		height: auto;
+		padding-bottom: 1rem;
+	}
+
+	.otrosProductos .otrosProductos-info .otrosProductos-card h3 {
+		color: var(--title-w);
+		padding-bottom: 0.5rem;
+	}
+
+	.otrosProductos .otrosProductos-info .otrosProductos-card p {
+		color: var(--body-text-w);
 	}
 
 	/**MEDIAS */
 	@media (max-width: 668px) {
-		.servicio .servicio-item {
+		.servicio .servicio-items-container .servicio-item {
 			width: 300px;
 		}
 
