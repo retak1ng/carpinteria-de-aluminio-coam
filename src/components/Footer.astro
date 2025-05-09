@@ -1,6 +1,8 @@
 ---
-const telefono = "2216265204";
+const telefono = "11 2156-6155";
+const whatsapp = "2216265204";
 const mail = "coamaluminio@gmail.com";
+const horario = "Lunes a Viernes 9 a 18hs"
 ---
 
 <footer>
@@ -8,11 +10,11 @@ const mail = "coamaluminio@gmail.com";
     <aside>
       <h4>Contacto</h4>
       <div>
-        <p>Horario de atencion Lunes a Viernes 8 a 18hs - Sabado 8 a 13hs</p>
-        <p>{telefono}</p>
+        <p><strong>Horario de atención</strong> {horario}</p>
+        <p><strong>Llamanos</strong> {telefono}</p>
         <p>
           <a href="https://wa.me/542216265204">
-            WhatsApp +549{telefono}
+            WhatsApp {whatsapp}
           </a>
         </p>
         <p>
@@ -22,7 +24,7 @@ const mail = "coamaluminio@gmail.com";
       </div>
     </aside>
     <aside>
-      <h4>Informacion</h4>
+      <h4>Información</h4>
       <ul>
         <li><a href="/">Inicio</a></li>
         <li><a href="/aboutUs">Sobre nosotros</a></li>
@@ -92,6 +94,6 @@ const mail = "coamaluminio@gmail.com";
 
   footer div aside ul li a{
     color: var(--body-text-w);
-
+  }
   /**MEDIAS */
 </style>
